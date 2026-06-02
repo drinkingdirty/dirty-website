@@ -30,10 +30,14 @@ export default function EventsPage() {
           <ScrollReveal>
             <p className="text-label text-cream/75 mb-6 tracking-[0.20em]">Private Events · Sorority · Bachelorette · Pop-Ups</p>
             <h1 className="font-display-italic text-display-lg text-cream max-w-[700px] mx-auto">
-              Get Dirty with us. Book today to host the event of the year.
+              Get Dirty with us.
+              <br />
+              Book today to host
+              <br />
+              the event of the year.
             </h1>
             <p className="mt-6 font-sans text-body-lg text-cream/85 max-w-[480px] mx-auto leading-relaxed">
-              We bring everything. You bring the people.
+              Make any event <em className="font-display-italic">Dirty.</em>
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-5">
               <a href="#booking" className="btn-coral">Book an Event</a>
@@ -99,7 +103,7 @@ export default function EventsPage() {
             ].map((step) => (
               <StaggerItem key={step.number}>
                 <div className="text-center">
-                  <p className="font-display-italic text-[5rem] leading-none text-blush-dark mb-4">{step.number}</p>
+                  <p className="font-display-italic text-[5rem] leading-none text-blush-dark mb-4 opacity-100 text-espresso/30">{step.number}</p>
                   <h3 className="font-display text-display-sm text-espresso mb-3">{step.title}</h3>
                   <p className="font-sans text-body-md text-text-secondary leading-relaxed">{step.desc}</p>
                 </div>
