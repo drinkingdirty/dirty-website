@@ -21,37 +21,22 @@ export default function Footer() {
     <footer className="bg-espresso text-cream" role="contentinfo">
       <div className="container-default py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-8">
-
           <div className="md:col-span-1">
             <Link href="/" aria-label="Dirty — go to homepage">
-              <span className="font-display-italic text-[2.5rem] leading-none text-coral">
-                Dirty
-              </span>
+              <span className="font-display-italic text-[2.5rem] leading-none text-coral">Dirty</span>
             </Link>
-            <p className="mt-3 font-display-italic text-lg text-cream/60">
-              Never Tasted This Good.
-            </p>
-            
-              href="https://instagram.com/drinking.dirty"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 flex items-center gap-2 font-sans text-sm text-cream/70 transition-colors hover:text-coral"
-            >
+            <p className="mt-3 font-display-italic text-lg text-cream/60">Never Tasted This Good.</p>
+            <a href="https://instagram.com/drinking.dirty" target="_blank" rel="noopener noreferrer"
+              className="mt-5 flex items-center gap-2 font-sans text-sm text-cream/70 transition-colors hover:text-coral">
               <InstagramIcon />
               <span>@drinking.dirty</span>
             </a>
-            
-              href="https://tiktok.com/@drinkingdirty"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 flex items-center gap-2 font-sans text-sm text-cream/70 transition-colors hover:text-coral"
-            >
+            <a href="https://tiktok.com/@drinkingdirty" target="_blank" rel="noopener noreferrer"
+              className="mt-3 flex items-center gap-2 font-sans text-sm text-cream/70 transition-colors hover:text-coral">
               <TikTokIcon />
               <span>@drinkingdirty</span>
             </a>
-            <p className="mt-4 font-sans text-[0.75rem] text-cream/40">
-              San Luis Obispo, California
-            </p>
+            <p className="mt-4 font-sans text-[0.75rem] text-cream/40">San Luis Obispo, California</p>
           </div>
 
           <div>
@@ -88,23 +73,17 @@ export default function Footer() {
 
           <div>
             <p className="text-label text-cream/50 mb-5">Stay in the Loop</p>
-            <p className="font-sans text-sm text-cream/70 leading-relaxed mb-4">
-              Get weekly location drops before they go public.
-            </p>
+            <p className="font-sans text-sm text-cream/70 leading-relaxed mb-4">Get weekly location drops before they go public.</p>
             <FooterEmailForm />
           </div>
         </div>
 
         <div className="mt-16 border-t border-cream/10 pt-10">
-          <p className="font-display-italic text-center text-2xl text-cream/30">
-            Dirty. Never Tasted This Good.
-          </p>
+          <p className="font-display-italic text-center text-2xl text-cream/30">Dirty. Never Tasted This Good.</p>
         </div>
 
         <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
-          <p className="font-sans text-xs text-cream/35">
-            © {currentYear} Dirty. All rights reserved.
-          </p>
+          <p className="font-sans text-xs text-cream/35">© {currentYear} Dirty. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="font-sans text-xs text-cream/35 transition-colors hover:text-cream/60">Privacy Policy</Link>
             <Link href="/terms" className="font-sans text-xs text-cream/35 transition-colors hover:text-cream/60">Terms</Link>
@@ -152,8 +131,8 @@ function InstagramIcon() {
 
 function TikTokIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z" fill="currentColor"/>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/>
     </svg>
   )
 }
