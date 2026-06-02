@@ -1,0 +1,304 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────
+   CSS CUSTOM PROPERTIES — DIRTY BRAND DESIGN TOKENS
+   ───────────────────────────────────────────────────────────────── */
+:root {
+  /* ── Brand Colors ─────────────────────────────────── */
+  --color-coral:       #E8523A;
+  --color-terracotta:  #C9412A;
+  --color-cream:       #FAF7F2;
+  --color-blush:       #F5E6DF;
+  --color-blush-dark:  #EDDDD3;
+  --color-espresso:    #2C1A12;
+  --color-sage:        #A8B89A;
+  --color-gold:        #D4A853;
+  --color-white:       #FFFFFF;
+
+  /* ── Text Colors ──────────────────────────────────── */
+  --text-primary:      #2C1A12;
+  --text-secondary:    #7A5C50;
+  --text-tertiary:     #B09080;
+  --text-inverse:      #FAF7F2;
+
+  /* ── Overlays ─────────────────────────────────────── */
+  --overlay-hero:      rgba(44, 26, 18, 0.38);
+  --overlay-events:    rgba(44, 26, 18, 0.50);
+  --overlay-coral:     rgba(232, 82, 58, 0.18);
+
+  /* ── Shadows ──────────────────────────────────────── */
+  --shadow-card:       0 2px 20px rgba(44, 26, 18, 0.07);
+  --shadow-card-hover: 0 10px 40px rgba(44, 26, 18, 0.13);
+
+  /* ── Transitions ──────────────────────────────────── */
+  --ease-out-expo:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:       cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring:       cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Spacing ──────────────────────────────────────── */
+  --nav-height:        72px;
+  --nav-height-mobile: 60px;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   BASE RESETS & DEFAULTS
+   ───────────────────────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    /* Smooth scrolling for anchor links */
+    scroll-behavior: smooth;
+    /* Prevent font size inflation on iOS */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--text-primary);
+    font-family: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Prevent horizontal overflow on mobile */
+    overflow-x: hidden;
+  }
+
+  /* Default heading styles — display font */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cormorant), Georgia, serif;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--text-primary);
+  }
+
+  /* Remove default list styles */
+  ul, ol {
+    list-style: none;
+  }
+
+  /* Remove default anchor styles */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Images fill their container by default */
+  img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Respect user motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Focus styles — accessible and on-brand */
+  :focus-visible {
+    outline: 2px solid var(--color-coral);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: rgba(232, 82, 58, 0.20);
+    color: var(--text-primary);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   TYPOGRAPHY UTILITIES
+   ───────────────────────────────────────────────────────────────── */
+@layer utilities {
+  /* Display font family */
+  .font-display {
+    font-family: var(--font-cormorant), Georgia, serif;
+  }
+
+  /* Italic display — used for hero headlines and pull quotes */
+  .font-display-italic {
+    font-family: var(--font-cormorant), Georgia, serif;
+    font-style: italic;
+  }
+
+  /* Uppercase label — DM Sans, tracked */
+  .text-label {
+    font-family: var(--font-dm-sans), sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    line-height: 1.5;
+  }
+
+  /* Full-height for hero sections — uses svh to avoid iOS chrome issues */
+  .h-screen-safe {
+    height: 100svh;
+  }
+
+  .min-h-screen-safe {
+    min-height: 100svh;
+  }
+
+  /* Section container — max width + horizontal padding */
+  .container-default {
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 3rem; /* 48px */
+  }
+
+  @media (max-width: 768px) {
+    .container-default {
+      padding-inline: 1.25rem; /* 20px */
+    }
+  }
+
+  /* Narrow content container (story, forms) */
+  .container-narrow {
+    max-width: 760px;
+    margin-inline: auto;
+    padding-inline: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .container-narrow {
+      padding-inline: 1.25rem;
+    }
+  }
+
+  /* Standard section vertical padding */
+  .section-padding {
+    padding-block: 6rem; /* 96px */
+  }
+
+  .section-padding-lg {
+    padding-block: 8rem; /* 128px */
+  }
+
+  .section-padding-sm {
+    padding-block: 4.5rem; /* 72px */
+  }
+
+  @media (max-width: 768px) {
+    .section-padding {
+      padding-block: 4rem;
+    }
+    .section-padding-lg {
+      padding-block: 5rem;
+    }
+    .section-padding-sm {
+      padding-block: 3rem;
+    }
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   COMPONENT LAYER
+   ───────────────────────────────────────────────────────────────── */
+@layer components {
+  /* ── Buttons ────────────────────────────────────────── */
+
+  /* Coral Pill — primary CTA */
+  .btn-coral {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply rounded-pill bg-coral px-8 py-3.5;
+    @apply font-sans text-label text-cream;
+    @apply transition-all duration-200 ease-in;
+    @apply hover:bg-terracotta hover:scale-[1.02];
+    @apply active:scale-[0.98];
+    @apply focus-visible:outline-coral;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+  }
+
+  /* Ghost Pill — secondary CTA, dark border */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply rounded-pill border border-espresso px-8 py-3.5;
+    @apply font-sans text-label text-espresso bg-transparent;
+    @apply transition-all duration-200 ease-in;
+    @apply hover:bg-espresso hover:text-cream hover:scale-[1.02];
+    @apply active:scale-[0.98];
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  /* Ghost Pill Inverse — for dark/overlay backgrounds */
+  .btn-ghost-inverse {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply rounded-pill border border-cream/60 px-8 py-3.5;
+    @apply font-sans text-label text-cream bg-transparent;
+    @apply transition-all duration-200 ease-in;
+    @apply hover:border-cream hover:bg-cream/15 hover:scale-[1.02];
+    @apply active:scale-[0.98];
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  /* Text Arrow Link */
+  .btn-text-arrow {
+    @apply inline-flex items-center gap-1.5;
+    @apply font-sans text-[1rem] font-medium text-espresso;
+    @apply transition-colors duration-200;
+    @apply hover:text-coral;
+  }
+
+  .btn-text-arrow::after {
+    content: '→';
+    display: inline-block;
+    transition: transform 200ms ease;
+  }
+
+  .btn-text-arrow:hover::after {
+    transform: translateX(4px);
+  }
+
+  /* Text Arrow Inverse (cream) */
+  .btn-text-arrow-inverse {
+    @apply btn-text-arrow text-cream/85;
+    @apply hover:text-cream;
+  }
+
+  /* ── Navigation Link ──────────────────────────────── */
+  .nav-link {
+    @apply relative font-sans text-sm font-medium tracking-wide;
+    @apply transition-colors duration-200;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: currentColor;
+    transition: width 250ms ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link[data-active='true']::after {
+    width: 100%;
+  }
+}
