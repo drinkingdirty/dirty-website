@@ -44,7 +44,7 @@ export default function BookingFormClient() {
     return (
       <div className="text-center py-16">
         <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-coral/10 mb-6">
-          <span className="text-3xl">✓</span>
+          <span className="font-display text-3xl text-coral">✓</span>
         </div>
         <h3 className="font-display-italic text-display-sm text-espresso mb-3">We got it. We&apos;re excited already.</h3>
         <p className="font-sans text-body-md text-text-secondary">

@@ -30,7 +30,7 @@ export default function EventsPage() {
           <ScrollReveal>
             <p className="text-label text-cream/75 mb-6 tracking-[0.20em]">Private Events · Sorority · Bachelorette · Pop-Ups</p>
             <h1 className="font-display-italic text-display-lg text-cream max-w-[700px] mx-auto">
-              The setup your guests won&apos;t stop talking about.
+              Get Dirty with us. Book today to host the event of the year.
             </h1>
             <p className="mt-6 font-sans text-body-lg text-cream/85 max-w-[480px] mx-auto leading-relaxed">
               We bring everything. You bring the people.
@@ -51,14 +51,14 @@ export default function EventsPage() {
           </ScrollReveal>
           <StaggerGroup className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: '🥂', title: 'Bachelorette Parties', desc: 'The most instagrammable favor you can give your bride.' },
-              { icon: '🎀', title: 'Sorority Events', desc: 'From recruitment to formals — we make the drink table the destination.' },
-              { icon: '🎉', title: 'Private Parties', desc: 'Birthday, milestone, celebration — we show up for all of it.' },
-              { icon: '📍', title: 'Brand Pop-Ups', desc: 'Custom cups, signature flavors, a setup that turns heads.' },
+              { icon: '◇', title: 'Bachelorette Parties', desc: 'The most instagrammable favor you can give your bride.' },
+              { icon: '◈', title: 'Sorority Events', desc: 'From recruitment to formals — we make the drink table the destination.' },
+              { icon: '○', title: 'Private Parties', desc: 'Birthday, milestone, celebration — we show up for all of it.' },
+              { icon: '◻', title: 'Brand Pop-Ups', desc: 'Custom cups, signature flavors, a setup that turns heads.' },
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="flex flex-col items-center text-center bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
-                  <span className="text-4xl mb-4">{item.icon}</span>
+                  <span className="font-display text-3xl text-espresso mb-4">{item.icon}</span>
                   <h3 className="font-display text-[1.5rem] text-espresso mb-3">{item.title}</h3>
                   <p className="font-sans text-body-md text-text-secondary leading-relaxed">{item.desc}</p>
                 </div>
@@ -178,8 +178,9 @@ export default function EventsPage() {
       <section id="booking" className="bg-white section-padding">
         <div className="container-default max-w-[680px]">
           <ScrollReveal>
-            <p className="text-label text-coral mb-4">Let&apos;s Work Together</p>
-            <h2 className="font-display-italic text-display-md text-espresso mb-4">Tell us about your event.</h2>
+            <h2 className="font-display-italic text-display-md text-espresso mb-4">
+              Let&apos;s talk Dirty.
+            </h2>
             <p className="font-sans text-body-md text-text-secondary mb-12">
               Fill out the form and we&apos;ll be in touch within 48 hours. No commitment required to inquire.
             </p>
