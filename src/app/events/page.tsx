@@ -37,7 +37,7 @@ export default function EventsPage() {
               the event of the year.
             </h1>
             <p className="mt-6 font-sans text-body-lg text-cream/85 max-w-[480px] mx-auto leading-relaxed">
-              Make any event <em className="font-display-italic font-semibold">Dirty.</em>
+<strong className="font-display-italic" style={{ fontWeight: 600, fontStyle: 'italic' }}>Dirty.</strong>
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-5">
               <a href="#booking" className="btn-coral">Book an Event</a>
