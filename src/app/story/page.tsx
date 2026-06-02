@@ -74,7 +74,7 @@ export default function StoryPage() {
             </div>
           </ScrollReveal>
 
-          {/* Founders Photo */}
+          {/* Together photo */}
           <ScrollReveal delay={0.15} className="mt-14">
             <div className="relative overflow-hidden rounded-2xl aspect-[16/9] w-full">
               <Image
@@ -85,9 +85,6 @@ export default function StoryPage() {
                 sizes="(max-width: 768px) 100vw, 760px"
               />
             </div>
-            <p className="mt-3 font-sans text-caption text-text-tertiary text-center italic">
-              Delainee Fernandes &amp; Madison Andrade — Co-Founders, Dirty
-            </p>
           </ScrollReveal>
         </div>
       </section>
@@ -108,7 +105,7 @@ export default function StoryPage() {
               <div className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-card">
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <Image
-                    src="/images/story/founders-aprons-01.jpg"
+                    src="/images/story/delainee-01.jpg"
                     alt="Delainee Fernandes — Co-Founder of Dirty"
                     fill
                     className="object-cover object-top"
@@ -119,7 +116,7 @@ export default function StoryPage() {
                   <p className="text-label text-coral mb-2">Co-Founder</p>
                   <h3 className="font-display text-display-sm text-espresso mb-4">Delainee Fernandes</h3>
                   <p className="font-sans text-body-md text-text-secondary leading-relaxed">
-                    4th year Ag Business Major with a Minor in Accounting from Tulare, California. Grew up doing competitive dance and cheer, while staying active in FFA through dairy cattle showing and judging. At Cal Poly, outgoing VP of Membership Recruitment in Alpha Omicron Pi.
+                    I am a 4th year Ag Business Major with a Minor in Accounting from Tulare, California. I grew up doing competitive dance and cheer, while staying active in FFA through dairy cattle showing and judging. At Cal Poly, I am the outgoing VP of Membership Recruitment in Alpha Omicron Pi. This journey has already taught me so much, and I can&apos;t wait to keep learning and sharing it with you all!
                   </p>
                 </div>
               </div>
@@ -130,10 +127,10 @@ export default function StoryPage() {
               <div className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-card">
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <Image
-                    src="/images/story/founders-aprons-01.jpg"
+                    src="/images/story/madison-01.jpg"
                     alt="Madison Andrade — Co-Founder of Dirty"
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
@@ -141,7 +138,7 @@ export default function StoryPage() {
                   <p className="text-label text-coral mb-2">Co-Founder</p>
                   <h3 className="font-display text-display-sm text-espresso mb-4">Madison Andrade</h3>
                   <p className="font-sans text-body-md text-text-secondary leading-relaxed">
-                    3rd year Ag Business Major with a Minor in Entrepreneurship from Visalia, California. Grew up doing competitive dance and showing cattle in FFA. At Cal Poly, Secretary of the ABM club and Director of Panhellenic Relations for Alpha Omicron Pi.
+                    I am a third year Ag Business Major with a Minor in Entrepreneurship from Visalia, California. I grew up doing competitive dance and showing cattle in FFA, both of which have shaped me to be the person I am today. At Cal Poly I am Secretary of the ABM club as well as Director of Panhellenic Relations for Alpha Omicron Pi. Starting my own business has always been a dream of mine and I can&apos;t wait to share this journey with you all!
                   </p>
                 </div>
               </div>
@@ -159,24 +156,11 @@ export default function StoryPage() {
               Three things we never compromise on.
             </h2>
           </ScrollReveal>
-
           <StaggerGroup className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
-              {
-                number: '01',
-                title: 'Made to Order',
-                body: 'Every drink is made fresh when you order it. No pre-made batches, no shortcuts. Just the real thing, every time.',
-              },
-              {
-                number: '02',
-                title: 'Community First',
-                body: 'We show up for SLO — at Thursday markets, campus events, ranch pop-ups, and the moments that matter most to this community.',
-              },
-              {
-                number: '03',
-                title: 'Every Drink, an Experience',
-                body: 'From the first sip to the last, we want every Dirty drink to be worth talking about. The presentation, the flavor, the moment.',
-              },
+              { number: '01', title: 'Made to Order', body: 'Every drink is made fresh when you order it. No pre-made batches, no shortcuts. Just the real thing, every time.' },
+              { number: '02', title: 'Community First', body: 'We show up for SLO — at Thursday markets, campus events, ranch pop-ups, and the moments that matter most to this community.' },
+              { number: '03', title: 'Every Drink, an Experience', body: 'From the first sip to the last, we want every Dirty drink to be worth talking about. The presentation, the flavor, the moment.' },
             ].map((item) => (
               <StaggerItem key={item.number}>
                 <div className="text-center md:text-left">
