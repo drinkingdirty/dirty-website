@@ -4,6 +4,7 @@ import Link from 'next/link'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import { StaggerGroup, StaggerItem } from '@/components/ui/ScrollReveal'
 import { testimonials } from '@/data/testimonials'
+import BookingFormClient from '@/components/events/BookingFormClient'
 
 export const metadata: Metadata = {
   title: 'Events & Catering | Dirty',
@@ -13,12 +14,11 @@ export const metadata: Metadata = {
 export default function EventsPage() {
   return (
     <>
-      {/* Hero */}
       <section className="relative overflow-hidden" style={{ minHeight: '80vh' }}>
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/events/event-setup-01.jpg"
-            alt="Dirty event setup — the setup your guests won't stop talking about"
+            alt="Dirty event setup"
             fill
             priority
             className="object-cover object-center"
@@ -28,9 +28,7 @@ export default function EventsPage() {
         </div>
         <div className="relative z-10 flex min-h-[80vh] flex-col items-center justify-center px-5 py-24 text-center">
           <ScrollReveal>
-            <p className="text-label text-cream/75 mb-6 tracking-[0.20em]">
-              Private Events · Sorority · Bachelorette · Pop-Ups
-            </p>
+            <p className="text-label text-cream/75 mb-6 tracking-[0.20em]">Private Events · Sorority · Bachelorette · Pop-Ups</p>
             <h1 className="font-display-italic text-display-lg text-cream max-w-[700px] mx-auto">
               The setup your guests won&apos;t stop talking about.
             </h1>
@@ -45,14 +43,11 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Event Types */}
       <section className="bg-cream section-padding">
         <div className="container-default">
           <ScrollReveal>
             <p className="text-label text-coral mb-4 text-center">We&apos;ve Done It All</p>
-            <h2 className="font-display-italic text-display-md text-espresso text-center mb-16">
-              What kind of event are you planning?
-            </h2>
+            <h2 className="font-display-italic text-display-md text-espresso text-center mb-16">What kind of event are you planning?</h2>
           </ScrollReveal>
           <StaggerGroup className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
@@ -73,46 +68,28 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Event Photos */}
       <section className="bg-white section-padding">
         <div className="container-default">
           <ScrollReveal>
             <p className="text-label text-sage mb-4">Past Events</p>
-            <h2 className="font-display-italic text-display-md text-espresso mb-12">
-              The Dirty experience, in full.
-            </h2>
+            <h2 className="font-display-italic text-display-md text-espresso mb-12">The Dirty experience, in full.</h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <ScrollReveal className="relative overflow-hidden rounded-2xl aspect-[4/3]">
-              <Image
-                src="/images/events/event-setup-01.jpg"
-                alt="Dirty event setup with banner and syrup display"
-                fill
-                className="object-cover hover:scale-[1.03] transition-transform duration-500"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+              <Image src="/images/events/event-setup-01.jpg" alt="Dirty event setup" fill className="object-cover hover:scale-[1.03] transition-transform duration-500" sizes="(max-width: 768px) 100vw, 50vw" />
             </ScrollReveal>
             <ScrollReveal delay={0.1} className="relative overflow-hidden rounded-2xl aspect-[4/3]">
-              <Image
-                src="/images/events/event-crowd-01.jpg"
-                alt="Customers lined up at a Dirty pop-up event"
-                fill
-                className="object-cover hover:scale-[1.03] transition-transform duration-500"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+              <Image src="/images/events/event-crowd-01.jpg" alt="Customers at a Dirty pop-up" fill className="object-cover hover:scale-[1.03] transition-transform duration-500" sizes="(max-width: 768px) 100vw, 50vw" />
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
       <section className="bg-blush section-padding">
         <div className="container-default">
           <ScrollReveal>
             <p className="text-label text-coral mb-4 text-center">The Process</p>
-            <h2 className="font-display-italic text-display-md text-espresso text-center mb-16">
-              Simple. Seamless. Dirty.
-            </h2>
+            <h2 className="font-display-italic text-display-md text-espresso text-center mb-16">Simple. Seamless. Dirty.</h2>
           </ScrollReveal>
           <StaggerGroup className="grid grid-cols-1 gap-12 md:grid-cols-3">
             {[
@@ -132,17 +109,12 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Pricing */}
       <section id="pricing" className="bg-espresso section-padding">
         <div className="container-default">
           <ScrollReveal>
             <p className="text-label text-coral mb-4 text-center">Catering Pricing</p>
-            <h2 className="font-display-italic text-display-md text-cream text-center mb-4">
-              Transparent pricing. No surprises.
-            </h2>
-            <p className="font-sans text-body-md text-cream/70 text-center mb-16 max-w-[480px] mx-auto">
-              All packages priced at $7 per drink. 50 drink minimum.
-            </p>
+            <h2 className="font-display-italic text-display-md text-cream text-center mb-4">Transparent pricing. No surprises.</h2>
+            <p className="font-sans text-body-md text-cream/70 text-center mb-16 max-w-[480px] mx-auto">All packages priced at $7 per drink. 50 drink minimum.</p>
           </ScrollReveal>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-[860px] mx-auto">
             <ScrollReveal>
@@ -177,34 +149,25 @@ export default function EventsPage() {
                     </div>
                   ))}
                 </div>
-                <p className="font-sans text-sm text-cream/50 mt-6">
-                  25% deposit due at booking. Refundable until 1 week before your event. Remaining balance billed after.
-                </p>
+                <p className="font-sans text-sm text-cream/50 mt-6">25% deposit due at booking. Refundable until 1 week before your event.</p>
               </div>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="bg-cream section-padding">
         <div className="container-default">
           <ScrollReveal>
             <p className="text-label text-sage mb-4 text-center">What They Said</p>
-            <h2 className="font-display-italic text-display-md text-espresso text-center mb-16">
-              From people who booked Dirty.
-            </h2>
+            <h2 className="font-display-italic text-display-md text-espresso text-center mb-16">From people who booked Dirty.</h2>
           </ScrollReveal>
           <StaggerGroup className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {testimonials.map((t) => (
               <StaggerItem key={t.id}>
                 <div className="border-l-[3px] border-coral pl-8 pr-6 py-2">
-                  <p className="font-display-italic text-[1.375rem] text-espresso leading-relaxed mb-4">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                  <p className="font-sans text-sm text-text-secondary">
-                    — {t.name}, {t.detail}
-                  </p>
+                  <p className="font-display-italic text-[1.375rem] text-espresso leading-relaxed mb-4">&ldquo;{t.quote}&rdquo;</p>
+                  <p className="font-sans text-sm text-text-secondary">— {t.name}, {t.detail}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -212,101 +175,20 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Booking Form */}
       <section id="booking" className="bg-white section-padding">
         <div className="container-default max-w-[680px]">
           <ScrollReveal>
             <p className="text-label text-coral mb-4">Let&apos;s Work Together</p>
-            <h2 className="font-display-italic text-display-md text-espresso mb-4">
-              Tell us about your event.
-            </h2>
+            <h2 className="font-display-italic text-display-md text-espresso mb-4">Tell us about your event.</h2>
             <p className="font-sans text-body-md text-text-secondary mb-12">
               Fill out the form and we&apos;ll be in touch within 48 hours. No commitment required to inquire.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <BookingForm />
+            <BookingFormClient />
           </ScrollReveal>
         </div>
       </section>
     </>
-  )
-}
-
-function BookingForm() {
-  return (
-    <form action="/api/booking" method="POST" className="flex flex-col gap-6">
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <div className="flex flex-col gap-2">
-          <label htmlFor="firstName" className="text-label text-text-secondary">First Name</label>
-          <input id="firstName" name="firstName" type="text" required placeholder="Savannah"
-            className="h-[52px] rounded-lg border border-blush-dark bg-white px-4 font-sans text-base text-espresso placeholder:text-text-tertiary focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors" />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="lastName" className="text-label text-text-secondary">Last Name</label>
-          <input id="lastName" name="lastName" type="text" required placeholder="Hopping"
-            className="h-[52px] rounded-lg border border-blush-dark bg-white px-4 font-sans text-base text-espresso placeholder:text-text-tertiary focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors" />
-        </div>
-      </div>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <div className="flex flex-col gap-2">
-          <label htmlFor="email" className="text-label text-text-secondary">Email Address</label>
-          <input id="email" name="email" type="email" required placeholder="you@email.com"
-            className="h-[52px] rounded-lg border border-blush-dark bg-white px-4 font-sans text-base text-espresso placeholder:text-text-tertiary focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors" />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="phone" className="text-label text-text-secondary">Phone Number</label>
-          <input id="phone" name="phone" type="tel" required placeholder="(805) 555-0000"
-            className="h-[52px] rounded-lg border border-blush-dark bg-white px-4 font-sans text-base text-espresso placeholder:text-text-tertiary focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors" />
-        </div>
-      </div>
-      <div className="flex flex-col gap-2">
-        <label htmlFor="eventDate" className="text-label text-text-secondary">Event Date</label>
-        <input id="eventDate" name="eventDate" type="date" required
-          className="h-[52px] rounded-lg border border-blush-dark bg-white px-4 font-sans text-base text-espresso focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors" />
-      </div>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <div className="flex flex-col gap-2">
-          <label htmlFor="eventType" className="text-label text-text-secondary">Event Type</label>
-          <select id="eventType" name="eventType" required
-            className="h-[52px] rounded-lg border border-blush-dark bg-white px-4 font-sans text-base text-espresso focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors appearance-none">
-            <option value="">Select one</option>
-            <option>Bachelorette Party</option>
-            <option>Sorority Event</option>
-            <option>Birthday Party</option>
-            <option>Brand Pop-Up</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="guestCount" className="text-label text-text-secondary">Expected Guests</label>
-          <select id="guestCount" name="guestCount" required
-            className="h-[52px] rounded-lg border border-blush-dark bg-white px-4 font-sans text-base text-espresso focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors appearance-none">
-            <option value="">Select one</option>
-            <option>Under 50</option>
-            <option>50 – 150</option>
-            <option>150 – 200</option>
-            <option>200+</option>
-          </select>
-        </div>
-      </div>
-      <div className="flex flex-col gap-2">
-        <label htmlFor="location" className="text-label text-text-secondary">Event Location / Address</label>
-        <input id="location" name="location" type="text" placeholder="123 Main St, San Luis Obispo, CA"
-          className="h-[52px] rounded-lg border border-blush-dark bg-white px-4 font-sans text-base text-espresso placeholder:text-text-tertiary focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors" />
-      </div>
-      <div className="flex flex-col gap-2">
-        <label htmlFor="notes" className="text-label text-text-secondary">Anything else we should know? <span className="text-text-tertiary normal-case font-normal">(optional)</span></label>
-        <textarea id="notes" name="notes" rows={4} placeholder="Tell us about your event..."
-          className="rounded-lg border border-blush-dark bg-white px-4 py-3 font-sans text-base text-espresso placeholder:text-text-tertiary focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors resize-none" />
-      </div>
-      <button type="submit" className="btn-coral w-full text-center">
-        Send My Inquiry
-      </button>
-      <p className="font-sans text-caption text-text-tertiary text-center">
-        We typically respond within 24–48 hours. For urgent inquiries, DM us on Instagram{' '}
-        <a href="https://instagram.com/drinking.dirty" target="_blank" rel="noopener noreferrer" className="text-coral hover:underline">@drinking.dirty</a>.
-      </p>
-    </form>
   )
 }
