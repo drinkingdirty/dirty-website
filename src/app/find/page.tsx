@@ -23,9 +23,9 @@ function formatDate(dateStr: string): { weekday: string; month: string; day: str
 export default function FindPage() {
   const events = getUpcomingEvents()
 
-  const eventsWithPreOrder = events.map(e => ({
+  const eventsWithPreOrder = events.map((e, index) => ({
     ...e,
-    preOrderEnabled: preOrderConfig[e.id] ?? true,
+    preOrderEnabled: index === 0 && (preOrderConfig[e.id] ?? true),
   }))
 
   return (
