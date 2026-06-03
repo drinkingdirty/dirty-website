@@ -29,8 +29,8 @@ const welcomeEmailHtml = `
                 style="width:100%;max-width:600px;display:block;object-fit:cover;object-position:center top;"
               />
               <!-- Overlay text on image -->
-              <div style="position:absolute;top:0;left:0;right:0;padding:40px 40px 48px;background:linear-gradient(to bottom, rgba(44,26,18,0.65) 0%, transparent 100%);">
-                <h1 style="margin:0;font-family:Georgia,serif;font-style:italic;font-size:48px;font-weight:400;color:#FAF7F2;line-height:1.1;">Welcome to Dirty.</h1>
+              <div style="position:absolute;top:0;left:0;right:0;padding:48px 40px 0;background:linear-gradient(to bottom, rgba(44,26,18,0.70) 0%, transparent 60%);">
+                <h1 style="margin:0;font-family:Georgia,serif;font-style:italic;font-size:52px;font-weight:400;color:#FAF7F2;line-height:1.1;">Welcome to Dirty.</h1>
               </div>
             </td>
           </tr>
