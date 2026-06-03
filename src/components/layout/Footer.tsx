@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useState } from 'react'
 
 const exploreLinks = [
   { label: 'Our Story',  href: '/story' },
@@ -95,27 +98,57 @@ export default function Footer() {
 }
 
 function FooterEmailForm() {
+  const [email, setEmail] = useState('')
+  const [state, setState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setState('loading')
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+      if (res.ok) {
+        setState('success')
+        setEmail('')
+      } else {
+        setState('error')
+      }
+    } catch {
+      setState('error')
+    }
+  }
+
+  if (state === 'success') {
+    return <p className="font-sans text-sm text-coral">You&apos;re in! We&apos;ll keep you posted.</p>
+  }
+
   return (
-    <div className="flex flex-col gap-2">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
       <div className="flex overflow-hidden rounded-full border border-cream/20 focus-within:border-cream/40 transition-colors duration-200">
         <input
           type="email"
-          name="email"
           placeholder="your email"
           autoComplete="email"
           required
+          value={email}
+          onChange={e => setEmail(e.target.value)}
           aria-label="Email address for location drops"
           className="flex-1 bg-transparent px-4 py-2.5 font-sans text-sm text-cream placeholder:text-cream/35 outline-none min-w-0"
         />
         <button
           type="submit"
-          className="shrink-0 rounded-full bg-cream/10 px-4 py-2 font-sans text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-cream transition-colors hover:bg-coral"
+          disabled={state === 'loading'}
+          className="shrink-0 rounded-full bg-cream/10 px-4 py-2 font-sans text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-cream transition-colors hover:bg-coral disabled:opacity-50"
         >
-          Go
+          {state === 'loading' ? '...' : 'Go'}
         </button>
       </div>
-      <p className="font-sans text-[0.7rem] text-cream/30">Unsubscribe anytime.</p>
-    </div>
+      {state === 'error' && <p className="font-sans text-[0.7rem] text-coral">Something went wrong. Try again.</p>}
+      {state === 'idle' && <p className="font-sans text-[0.7rem] text-cream/30">Unsubscribe anytime.</p>}
+    </form>
   )
 }
 
