@@ -85,6 +85,12 @@ export default function Navigation() {
             >
               Book an Event
             </Link>
+            <Link
+              href="/find"
+              className="rounded-pill px-6 py-2.5 font-sans transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] bg-coral text-cream hover:bg-terracotta"
+            >
+              Pre-Order
+            </Link>
           </nav>
 
           <div className="flex items-center gap-3 md:hidden">
