@@ -36,8 +36,9 @@ export default function EventsPage() {
               <br />
               the event of the year.
             </h1>
-            <p className="mt-6 font-sans text-body-lg text-cream/85 max-w-[480px] mx-auto leading-relaxed">
-  Make your next event <span className="font-display-italic text-coral">Dirty.</span>
+<p className="mt-6 font-sans text-body-lg text-cream/85 max-w-[480px] mx-auto leading-relaxed">
+  Make your next event{' '}
+  <span className="font-display-italic text-coral text-display-sm">Dirty.</span>
 </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-5">
               <a href="#booking" className="btn-coral">Book an Event</a>
@@ -46,7 +47,6 @@ export default function EventsPage() {
           </ScrollReveal>
         </div>
       </section>
-
       <section className="bg-cream section-padding">
         <div className="container-default">
           <ScrollReveal>
