@@ -29,9 +29,8 @@ const welcomeEmailHtml = `
                 style="width:100%;max-width:600px;display:block;object-fit:cover;object-position:center top;"
               />
               <!-- Overlay text on image -->
-              <div style="position:absolute;bottom:0;left:0;right:0;padding:40px 40px 48px;background:linear-gradient(to top, rgba(44,26,18,0.75) 0%, transparent 100%);">
-                <p style="margin:0 0 8px;font-family:Georgia,serif;font-style:italic;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(250,247,242,0.75);">Est. 2025 · San Luis Obispo, CA</p>
-                <h1 style="margin:0;font-family:Georgia,serif;font-style:italic;font-size:42px;font-weight:400;color:#FAF7F2;line-height:1.1;">Welcome to Dirty's<br/>inner circle.</h1>
+              <div style="position:absolute;top:0;left:0;right:0;padding:40px 40px 48px;background:linear-gradient(to bottom, rgba(44,26,18,0.65) 0%, transparent 100%);">
+                <h1 style="margin:0;font-family:Georgia,serif;font-style:italic;font-size:48px;font-weight:400;color:#FAF7F2;line-height:1.1;">Welcome to Dirty.</h1>
               </div>
             </td>
           </tr>
@@ -114,7 +113,7 @@ export async function POST(req: NextRequest) {
     })
 
     await resend.emails.send({
-      from: process.env.FROM_EMAIL!,
+      from: "Dirty <onboarding@resend.dev>",
       to: email,
       subject: "Welcome to Dirty's inner circle.",
       html: welcomeEmailHtml,
