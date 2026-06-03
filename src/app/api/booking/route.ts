@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
     const { firstName, lastName, email, phone, eventDate, eventType, guestCount, location, notes } = body
 
     await resend.emails.send({
-      from: process.env.FROM_EMAIL!,
+      from: "Dirty <hello@drinkingdirtysoda.com>",
       to: process.env.OWNER_EMAIL!,
       subject: `New Event Inquiry — ${eventType} on ${eventDate}`,
       html: `

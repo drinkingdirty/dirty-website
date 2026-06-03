@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     ).join('')
 
     await resend.emails.send({
-      from: process.env.FROM_EMAIL!,
+      from: "Dirty <hello@drinkingdirtysoda.com>",
       to: process.env.OWNER_EMAIL!,
       subject: `New Pre-Order — ${customerName} — Pickup ${pickupWindow}`,
       html: `
@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
     })
 
     await resend.emails.send({
-      from: process.env.FROM_EMAIL!,
+      from: "Dirty <hello@drinkingdirtysoda.com>",
       to: customerEmail,
       subject: `Your Dirty Pre-Order is confirmed!`,
       html: `

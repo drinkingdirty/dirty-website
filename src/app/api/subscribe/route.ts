@@ -113,7 +113,7 @@ export async function POST(req: NextRequest) {
     })
 
     await resend.emails.send({
-      from: "Dirty <onboarding@resend.dev>",
+      from: "Dirty <hello@drinkingdirtysoda.com>",
       to: email,
       subject: "Welcome to Dirty's inner circle.",
       html: welcomeEmailHtml,
