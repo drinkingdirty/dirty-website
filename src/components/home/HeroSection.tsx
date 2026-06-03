@@ -69,7 +69,7 @@ export default function HeroSection() {
 
         {/* Main Headline */}
         <motion.h1
-          className="font-display-italic text-display-xl text-cream leading-[0.92] tracking-[-0.02em]"
+          className="font-display-italic text-display-xl text-cream leading-[1.0] tracking-[-0.02em]"
           variants={textVariants(0.32)}
           initial="hidden"
           animate="visible"
