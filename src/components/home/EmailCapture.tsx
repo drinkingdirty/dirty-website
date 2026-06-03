@@ -38,10 +38,10 @@ export default function EmailCapture() {
           <ScrollReveal>
             <p className="text-label text-coral mb-4">Never Miss a Drop</p>
             <h2 className="font-display-italic text-display-sm text-espresso">
-              Know where we&apos;ll be<br />before everyone else.
+              Keep up with Dirty.
             </h2>
             <p className="mt-4 font-sans text-body-md text-text-secondary">
-              Weekly location drops. That&apos;s it. No clutter.
+              Weekly pop-up locations and new menu additions. You won&apos;t want to miss us.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1} className="mt-8">
