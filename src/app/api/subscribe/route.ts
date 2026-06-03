@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
           </tr>
           <tr>
             <td style="padding:0;">
-              <img src="https://i.imgur.com/a9941DL.jpeg" alt="Dirty" width="600" style="width:100%;max-width:600px;display:block;" />
+              <img src="https://dirty-website.vercel.app/images/email/welcome-hero.jpg" alt="Dirty" width="600" style="width:100%;max-width:600px;display:block;" />
             </td>
           </tr>
           <tr>
