@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import { StaggerGroup, StaggerItem } from '@/components/ui/ScrollReveal'
 import { menuItems } from '@/data/menu'
@@ -56,13 +57,13 @@ export default function MenuPage() {
                 </ScrollReveal>
                 <ScrollReveal delay={0.1}>
                   <div className="relative overflow-hidden rounded-2xl aspect-[4/5]">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#E8A060] to-[#C97C3A] flex items-center justify-center">
-                      <div className="text-center px-8">
-                        <p className="font-display-italic text-[5rem] leading-none text-cream/20 mb-4">✦</p>
-                        <p className="font-display-italic text-display-sm text-cream">Available Now</p>
-                        <p className="font-sans text-label text-cream/60 mt-2">At the Thursday Farmers Market</p>
-                      </div>
-                    </div>
+                    <Image
+                      src="/images/drinks/golden-hour-01.jpg"
+                      alt="The Golden Hour — Dirty Summer Seasonal"
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </div>
                 </ScrollReveal>
               </div>
