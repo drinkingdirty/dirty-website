@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { sendEmail, FROM_EMAIL, OWNER_EMAIL, SITE_URL } from '@/lib/email'
 import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
+
 const AUDIENCE_ID = '10c69e05-6178-4d28-9932-02bcb01de424'
-const SITE_URL = 'https://drinkingdirtysoda.com'
 
 export async function POST(req: NextRequest) {
   try {
@@ -20,7 +21,7 @@ export async function POST(req: NextRequest) {
       unsubscribed: false,
     })
 
-    await resend.emails.send({
+    await sendEmail({
       from: 'Dirty <hello@drinkingdirtysoda.com>',
       to: email,
       subject: "Welcome to Dirty's inner circle.",
@@ -44,7 +45,7 @@ export async function POST(req: NextRequest) {
           </tr>
           <tr>
             <td style="padding:0;">
-              <img src="https://dirty-website.vercel.app/images/email/welcome-hero.jpg" alt="Dirty" width="600" style="width:100%;max-width:600px;display:block;" />
+              <img src="https://drinkingdirtysoda.com/images/email/welcome-hero.jpg" alt="Dirty" width="600" style="width:100%;max-width:600px;display:block;" />
             </td>
           </tr>
           <tr>

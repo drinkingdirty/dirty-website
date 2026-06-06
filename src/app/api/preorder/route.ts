@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
+import { sendEmail, FROM_EMAIL, OWNER_EMAIL, SITE_URL } from '@/lib/email'
 import type { DrinkOrder } from '@/types/preorder'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
 
 function formatDrink(drink: DrinkOrder, index: number): string {
   if (drink.type === 'menu') {
@@ -21,7 +20,7 @@ export async function POST(req: NextRequest) {
       `<p>${formatDrink(d, i)}</p>`
     ).join('')
 
-    await resend.emails.send({
+    await sendEmail({
       from: "Dirty <hello@drinkingdirtysoda.com>",
       to: process.env.OWNER_EMAIL!,
       subject: `New Pre-Order — ${customerName} — Pickup ${pickupWindow}`,
@@ -35,7 +34,7 @@ export async function POST(req: NextRequest) {
       `,
     })
 
-    await resend.emails.send({
+    await sendEmail({
       from: "Dirty <hello@drinkingdirtysoda.com>",
       to: customerEmail,
       subject: `Your Dirty Pre-Order is confirmed!`,

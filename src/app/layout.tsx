@@ -25,18 +25,17 @@ const dmSans = DM_Sans({
   preload: true,
 })
 
-// ── Site Metadata ──────────────────────────────────────────────────
+// ── Site Metadata ──────────────────────────────────────────────
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dirty.com'
-  ),
+  metadataBase: new URL('https://drinkingdirtysoda.com'),
 
   title: {
-    default: 'Dirty — Premium Dirty Soda | San Luis Obispo, CA',
-    template: '%s | Dirty',
+    default: 'Dirty. — Never Tasted This Good',
+    template: '%s | Dirty.',
   },
+
   description:
-    'Handcrafted dirty sodas found at SLO\'s best farmers markets, campus events, and private bookings. Dirty. Never Tasted This Good.',
+    'Handcrafted dirty sodas made fresh at pop-up events across San Luis Obispo. Signatures, Bombers, and Build Your Own starting at $6.',
 
   keywords: [
     'dirty soda',
@@ -47,7 +46,6 @@ export const metadata: Metadata = {
     'Cal Poly',
     'event catering',
     'dirty soda SLO',
-    'premium soda',
   ],
 
   authors: [{ name: 'Dirty' }],
@@ -55,23 +53,23 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Dirty',
-    title: 'Dirty — Premium Dirty Soda | San Luis Obispo, CA',
+    siteName: 'Dirty.',
+    title: 'Dirty. — Never Tasted This Good',
     description:
-      'Handcrafted dirty sodas found at SLO\'s best farmers markets, campus events, and private bookings.',
+      'Handcrafted dirty sodas made fresh at pop-up events across San Luis Obispo.',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Dirty — Handcrafted Dirty Soda, San Luis Obispo',
+        alt: 'Dirty. — Handcrafted Dirty Soda, San Luis Obispo',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Dirty — Premium Dirty Soda | SLO, CA',
+    title: 'Dirty. — Never Tasted This Good',
     description: 'Handcrafted dirty sodas. Found in the wild.',
     images: ['/images/og-image.jpg'],
   },
@@ -91,7 +89,6 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
 }
-
 // ── Root Layout ────────────────────────────────────────────────────
 export default function RootLayout({
   children,

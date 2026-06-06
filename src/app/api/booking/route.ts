@@ -1,14 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
+import { sendEmail, FROM_EMAIL, OWNER_EMAIL, SITE_URL } from '@/lib/email'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
     const { firstName, lastName, email, phone, eventDate, eventType, guestCount, location, notes } = body
 
-    await resend.emails.send({
+    await sendEmail({
       from: "Dirty <hello@drinkingdirtysoda.com>",
       to: process.env.OWNER_EMAIL!,
       subject: `New Event Inquiry — ${eventType} on ${eventDate}`,

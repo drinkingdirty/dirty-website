@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
 import HeroSection from '@/components/home/HeroSection'
-import BrandStatement from '@/components/home/BrandStatement'
 import FeaturedDrinks from '@/components/home/FeaturedDrinks'
 import FindUsTeaser from '@/components/home/FindUsTeaser'
-import EventsCTA from '@/components/home/EventsCTA'
 import LoyaltyStrip from '@/components/home/LoyaltyStrip'
 import InstagramGrid from '@/components/home/InstagramGrid'
 import EmailCapture from '@/components/home/EmailCapture'
@@ -22,10 +20,8 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <BrandStatement />
       <FeaturedDrinks />
       <FindUsTeaser />
-      <EventsCTA />
       <LoyaltyStrip />
       <InstagramGrid />
       <EmailCapture />
