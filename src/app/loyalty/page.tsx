@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import { StaggerGroup, StaggerItem } from '@/components/ui/ScrollReveal'
@@ -11,13 +12,30 @@ export const metadata: Metadata = {
 export default function LoyaltyPage() {
   return (
     <>
-      {/* Header */}
-      <section className="bg-cream pt-40 pb-16 text-center">
-        <div className="container-default">
+      {/* Hero with background image */}
+      <section className="relative overflow-hidden" style={{ minHeight: '50vh' }}>
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero/loyalty-hero-01.jpg"
+            alt="Come back for more — Dirty Loyalty Program"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(44,26,18,0.35) 0%, rgba(44,26,18,0.65) 100%)',
+            }}
+            aria-hidden="true"
+          />
+        </div>
+        <div className="relative z-10 flex flex-col items-center justify-end px-5 pb-16 container-default text-center" style={{ minHeight: '50vh' }}>
           <ScrollReveal>
-            <p className="text-label text-gold mb-4">The Regulars Club</p>
-            <h1 className="font-display-italic text-display-lg text-espresso">Come back for more.</h1>
-            <p className="mt-6 font-sans text-body-lg text-text-secondary max-w-[480px] mx-auto">
+            <p className="text-label text-cream/75 mb-4">The Regulars Club</p>
+            <h1 className="font-display-italic text-display-lg text-cream">Come back for more.</h1>
+            <p className="mt-4 font-sans text-body-lg text-cream/80 max-w-[480px] mx-auto">
               The more you drink, the better it gets.
             </p>
           </ScrollReveal>
@@ -28,29 +46,24 @@ export default function LoyaltyPage() {
       <section className="bg-espresso section-padding">
         <div className="container-default">
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2 items-center">
-            {/* Card Visual */}
+            {/* Real loyalty card image */}
             <ScrollReveal>
-              <div className="relative mx-auto max-w-[400px]">
-                <div className="bg-cream rounded-2xl p-10 shadow-deep">
-                  <div className="flex items-center justify-between mb-8">
-                    <img src="/images/logo/dirty-logo.png" alt="Dirty" className="h-16 w-16 object-contain" />
-                    <p className="font-display-italic text-2xl text-espresso">Loyalty Card</p>
-                  </div>
-                  <div className="grid grid-cols-3 gap-3 mb-8">
-                    {Array.from({ length: 9 }).map((_, i) => (
-                      <div key={i} className={`aspect-square rounded-full border-2 flex items-center justify-center ${i < 8 ? 'border-blush-dark' : 'border-coral bg-coral'}`}>
-                        {i === 8 && <span className="text-cream text-lg">★</span>}
-                      </div>
-                    ))}
-                  </div>
-                  <p className="font-display-italic text-center text-espresso">Buy 8, your 9th is on us.</p>
+              <div className="relative mx-auto max-w-[440px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-deep aspect-[3/2]">
+                  <Image
+                    src="/images/loyalty-card-01.jpg"
+                    alt="Dirty Loyalty Card"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 440px"
+                  />
                 </div>
               </div>
             </ScrollReveal>
 
             {/* Content */}
             <ScrollReveal delay={0.1}>
-              <p className="text-label text-gold mb-4">Buy 8, Get Your 9th Free</p>
+              <p className="text-label text-cream/50 mb-4">Buy 8, Get Your 9th Free</p>
               <h2 className="font-display-italic text-display-md text-cream mb-6">
                 The world&apos;s easiest rewards program.
               </h2>
@@ -73,15 +86,15 @@ export default function LoyaltyPage() {
               Three steps. That&apos;s it.
             </h2>
           </ScrollReveal>
-          <StaggerGroup className="grid grid-cols-1 gap-12 md:grid-cols-3">
+          <StaggerGroup className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
-              { number: '01', icon: '🎴', title: 'Get Your Card', desc: 'Pick up a free loyalty card at any Dirty location. Just ask when you order — no sign-up required.' },
-              { number: '02', icon: '✓', title: 'Collect Your Punches', desc: 'Every drink gets you one punch. Ask your server each time you order.' },
-              { number: '03', icon: '★', title: 'Drink #9 is Free', desc: 'When your card is full, your next drink is completely on us. No catches.' },
+              { number: '01', title: 'Get Your Card', desc: 'Pick up a free loyalty card at any Dirty location. Just ask when you order — no sign-up required.' },
+              { number: '02', title: 'Collect Your Punches', desc: 'Every drink gets you one punch. Ask when you order each time.' },
+              { number: '03', title: 'Drink 9 Is Free', desc: 'Fill the card and your next drink is completely on us. No catches, no expiry.' },
             ].map((step) => (
               <StaggerItem key={step.number}>
-                <div className="text-center">
-                  <p className="font-display-italic text-[5rem] leading-none text-blush-dark mb-2">{step.number}</p>
+                <div className="bg-white rounded-xl p-8 text-center h-full">
+                  <p className="font-display-italic text-[4rem] leading-none text-blush-dark mb-4">{step.number}</p>
                   <h3 className="font-display text-display-sm text-espresso mb-3">{step.title}</h3>
                   <p className="font-sans text-body-md text-text-secondary leading-relaxed">{step.desc}</p>
                 </div>
@@ -99,7 +112,7 @@ export default function LoyaltyPage() {
               Cards are free. Find us to grab yours.
             </h2>
             <p className="font-sans text-body-md text-text-secondary mb-8">
-              We don&apos;t mail cards or offer digital versions. Visit us at any Dirty location and ask — we&apos;ll hand you one with your first drink.
+              Pick one up at any Dirty location — just ask when you order. No sign-up, no account, nothing to download.
             </p>
             <Link href="/find" className="btn-coral">See This Week&apos;s Locations</Link>
           </ScrollReveal>
