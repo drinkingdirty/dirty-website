@@ -12,26 +12,27 @@ export const metadata: Metadata = {
 export default function LoyaltyPage() {
   return (
     <>
-      {/* Hero with background image */}
-      <section className="relative overflow-hidden" style={{ minHeight: '50vh' }}>
+      {/* Hero with video background */}
+      <section className="relative overflow-hidden" style={{ minHeight: '55vh' }}>
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero/loyalty-hero-01.jpg"
-            alt="Come back for more — Dirty Loyalty Program"
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="100vw"
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          >
+            <source src="/videos/loyalty-hero.mp4" type="video/mp4" />
+          </video>
           <div
             className="absolute inset-0"
             style={{
-              background: 'linear-gradient(to bottom, rgba(44,26,18,0.35) 0%, rgba(44,26,18,0.65) 100%)',
+              background: 'linear-gradient(to bottom, rgba(44,26,18,0.35) 0%, rgba(44,26,18,0.70) 100%)',
             }}
             aria-hidden="true"
           />
         </div>
-        <div className="relative z-10 flex flex-col items-center justify-end px-5 pb-16 container-default text-center" style={{ minHeight: '50vh' }}>
+        <div className="relative z-10 flex flex-col items-center justify-end px-5 pb-16 container-default text-center" style={{ minHeight: '55vh' }}>
           <ScrollReveal>
             <p className="text-label text-cream/75 mb-4">The Regulars Club</p>
             <h1 className="font-display-italic text-display-lg text-cream">Come back for more.</h1>
@@ -112,7 +113,7 @@ export default function LoyaltyPage() {
               Cards are free. Find us to grab yours.
             </h2>
             <p className="font-sans text-body-md text-text-secondary mb-8">
-              Pick one up at any Dirty location — just ask when you order. No sign-up, no account, nothing to download.
+              Pick one up at any Dirty location — just ask when you order. Nothing to download, nothing to sign up for.
             </p>
             <Link href="/find" className="btn-coral">See This Week&apos;s Locations</Link>
           </ScrollReveal>
