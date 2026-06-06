@@ -74,18 +74,7 @@ export default function Navigation() {
                 </Link>
               )
             })}
-            <Link
-              href="/events"
-              className={cn(
-                'rounded-pill px-6 py-2.5 font-sans text-label transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]',
-                isTransparent
-                  ? 'border border-cream/60 text-cream hover:border-cream hover:bg-cream/15'
-                  : 'bg-coral text-cream hover:bg-terracotta'
-              )}
-            >
-              Book an Event
-            </Link>
-            <Link
+<Link
               href="/find"
               className="rounded-pill px-6 py-2.5 font-sans transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] bg-coral text-cream hover:bg-terracotta"
             >
@@ -94,16 +83,7 @@ export default function Navigation() {
           </nav>
 
           <div className="flex items-center gap-3 md:hidden">
-            <Link
-              href="/events"
-              className={cn(
-                'rounded-pill px-4 py-2 font-sans text-[0.625rem] font-semibold uppercase tracking-[0.14em] transition-all duration-200',
-                isTransparent ? 'border border-cream/60 text-cream' : 'bg-coral text-cream'
-              )}
-            >
-              Book
-            </Link>
-            <button
+<button
               onClick={openMenu}
               className={cn(
                 'flex h-10 w-10 items-center justify-center rounded-full transition-colors',
