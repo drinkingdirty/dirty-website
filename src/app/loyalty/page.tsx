@@ -125,7 +125,7 @@ export default function LoyaltyPage() {
         <div className="container-default">
           <ScrollReveal>
             <p className="font-display-italic text-display-sm text-espresso max-w-[600px] mx-auto">
-              &ldquo;Our best customers are the ones who come back. You know who you are.&rdquo;
+              &ldquo;Once you go Dirty&hellip; you never go back.&rdquo;
             </p>
           </ScrollReveal>
         </div>
