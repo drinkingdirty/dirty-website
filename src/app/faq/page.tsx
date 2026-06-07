@@ -63,9 +63,26 @@ const faqCategories = [
 
 export default function FAQPage() {
   return (
-    <>
+    <div className="relative">
+      {/* Video background */}
+      <div className="fixed inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        >
+          <source src="/videos/faq-bg.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-[rgba(250,247,242,0.82)]" aria-hidden="true" />
+      </div>
+
+      {/* Page content */}
+      <div className="relative z-10">
+
       {/* Header */}
-      <section className="bg-cream pt-40 pb-16 text-center">
+      <section className="bg-transparent pt-40 pb-16 text-center">
         <div className="container-default">
           <ScrollReveal>
             <p className="text-label text-sage mb-4">Good questions.</p>
@@ -78,7 +95,7 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Content */}
-      <section className="bg-white section-padding">
+      <section className="bg-transparent section-padding">
         <div className="container-narrow">
           {faqCategories.map((cat, i) => (
             <ScrollReveal key={cat.label} delay={i * 0.05} className="mb-14">
@@ -92,7 +109,7 @@ export default function FAQPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-blush section-padding-sm text-center">
+      <section className="bg-transparent section-padding-sm text-center">
         <div className="container-default">
           <ScrollReveal>
             <h2 className="font-display-italic text-display-sm text-espresso mb-4">Still have questions?</h2>
@@ -104,6 +121,7 @@ export default function FAQPage() {
           </ScrollReveal>
         </div>
       </section>
-    </>
+      </div>
+    </div>
   )
 }
