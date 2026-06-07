@@ -99,11 +99,20 @@ export default function MenuPage() {
                     </text>
                   </svg>
                   <div className="relative" style={{ aspectRatio: '3/4' }}>
+                    {/* Radial glow behind drink */}
+                    <div
+                      className="absolute inset-0 rounded-full"
+                      style={{
+                        background: 'radial-gradient(ellipse at center, rgba(255,210,120,0.55) 0%, rgba(232,160,80,0.25) 45%, transparent 72%)',
+                        transform: 'scale(1.1)',
+                      }}
+                      aria-hidden="true"
+                    />
                     <Image
                       src="/images/drinks/golden-hour.png"
                       alt="The Golden Hour"
                       fill
-                      className="object-contain object-center drop-shadow-2xl"
+                      className="object-contain object-center drop-shadow-2xl relative z-10"
                       sizes="420px"
                     />
                   </div>
