@@ -21,7 +21,7 @@ export default function EventsPage() {
             alt="Dirty event setup"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-top"
             sizes="100vw"
           />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(44,26,18,0.25) 0%, rgba(44,26,18,0.62) 100%)' }} />
