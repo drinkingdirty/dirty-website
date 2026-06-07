@@ -36,7 +36,7 @@ export default function HeroSection() {
         animate="visible"
       >
         <Image
-          src="/images/hero/hero-drink-01.jpg"
+          src="/images/hero/hero-events-01.jpg"
           alt="A handcrafted Dirty soda — condensation on glass, warm California light"
           fill
           priority
