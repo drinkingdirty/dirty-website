@@ -36,7 +36,7 @@ export default function LoyaltyPage() {
           <ScrollReveal>
             <p className="text-label text-cream/75 mb-4">The Regulars Club</p>
             <h1 className="font-display-italic text-display-lg text-cream">Come back for more.</h1>
-            <p className="mt-4 font-sans text-body-lg text-cream/80 max-w-[480px] mx-auto">
+            <p className="mt-4 font-sans text-body-lg text-cream/90 max-w-[480px] mx-auto">
               The more you drink, the better it gets.
             </p>
           </ScrollReveal>
@@ -44,7 +44,7 @@ export default function LoyaltyPage() {
       </section>
 
       {/* Card Section */}
-      <section className="bg-espresso section-padding">
+      <section className="bg-coral section-padding">
         <div className="container-default">
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2 items-center">
             {/* Real loyalty card image */}
@@ -64,14 +64,14 @@ export default function LoyaltyPage() {
 
             {/* Content */}
             <ScrollReveal delay={0.1}>
-              <p className="text-label text-cream/50 mb-4">Buy 8, Get Your 9th Free</p>
+              <p className="text-label text-cream/70 mb-4">Buy 8, Get Your 9th Free</p>
               <h2 className="font-display-italic text-display-md text-cream mb-6">
                 The world&apos;s easiest rewards program.
               </h2>
-              <p className="font-sans text-body-lg text-cream/80 leading-relaxed mb-6">
+              <p className="font-sans text-body-lg text-cream/90 leading-relaxed mb-6">
                 Every time you order a Dirty, ask for a punch on your loyalty card. Fill the card and your next drink is completely on us.
               </p>
-              <p className="font-sans text-body-md text-cream/60">
+              <p className="font-sans text-body-md text-cream/80">
                 A card, a punch, and a free drink waiting.
               </p>
             </ScrollReveal>
