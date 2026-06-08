@@ -28,6 +28,7 @@ const dmSans = DM_Sans({
 
 // ── Site Metadata ──────────────────────────────────────────────
 export const metadata: Metadata = {
+
   metadataBase: new URL('https://drinkingdirtysoda.com'),
 
   title: {
@@ -86,7 +87,7 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: '/favicon.ico',
+    icon: '/images/logo/favicon.png',
     apple: '/apple-touch-icon.png',
   },
 }
