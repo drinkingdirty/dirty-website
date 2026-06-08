@@ -46,7 +46,6 @@ export default function VibeSelector({ sweetFruity, boldCreamy, classicClean }: 
                   : 'border-blush-dark bg-white/50 hover:bg-white hover:border-coral/40'
               }`}
             >
-              <div className="text-3xl mb-3">{v.emoji}</div>
               <h3 className="font-display text-[1.25rem] text-espresso mb-1">{v.label}</h3>
               <p className="font-sans text-sm text-text-secondary">{v.desc}</p>
             </button>
