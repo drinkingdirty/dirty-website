@@ -91,7 +91,7 @@ export default function LoyaltyPage() {
             {[
               { number: '01', title: 'Get Your Card', desc: 'Pick up a free loyalty card at any Dirty location. Just ask when you order — no sign-up required.' },
               { number: '02', title: 'Collect Your Punches', desc: 'Every drink gets you one punch. Ask when you order each time.' },
-              { number: '03', title: 'Drink 9 Is Free', desc: 'Fill the card and your next drink is completely on us. No catches, no expiry.' },
+              { number: '03', title: 'Drink 8 Is Free', desc: 'Fill the card and your next drink is completely on us. No catches, no expiry.' },
             ].map((step) => (
               <StaggerItem key={step.number}>
                 <div className="bg-white rounded-xl p-8 text-center h-full">
