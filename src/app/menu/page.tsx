@@ -170,7 +170,7 @@ export default function MenuPage() {
         <div className="container-default">
           <ScrollReveal>
             <p className="text-label text-coral mb-3">Trending This Week</p>
-            <h2 className="font-display-italic text-display-md text-espresso mb-12">Everyone&apos;s ordering this.</h2>
+            <h2 className="font-display-italic text-display-md text-espresso mb-12">Hot at <span className="text-coral">Dirty</span> this week.</h2>
           </ScrollReveal>
           <StaggerGroup className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {[
