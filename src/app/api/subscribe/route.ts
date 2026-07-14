@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { sendEmail, FROM_EMAIL, OWNER_EMAIL, SITE_URL } from '@/lib/email'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const getResend = () => new Resend(process.env.RESEND_API_KEY)
 
 const AUDIENCE_ID = '10c69e05-6178-4d28-9932-02bcb01de424'
 
@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Email required.' }, { status: 400 })
     }
 
-    await resend.contacts.create({
+    await getResend().contacts.create({
       email,
       audienceId: AUDIENCE_ID,
       unsubscribed: false,
