@@ -30,7 +30,7 @@ export default function MenuPage() {
           {/* Left — lifestyle photo */}
           <div className="relative min-h-[50vh] md:min-h-screen order-2 md:order-1">
             <Image
-              src="/images/hero/instagram/ig-06.jpg"
+              src="/images/instagram/ig-06.jpg"
               alt="The Golden Hour — Dirty Summer Drink"
               fill
               priority
