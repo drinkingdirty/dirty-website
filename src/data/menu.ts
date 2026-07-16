@@ -153,7 +153,7 @@ export const menuItems: DrinkItem[] = [
     imagePath: '/images/drinks/lifestyle-ranch-01.jpg',
     isFeatured: true,
     isSeasonal: true,
-    isAvailable: true,
+    isAvailable: false,
     seasonalLabel: 'Summer 2026',
   },
 ]
