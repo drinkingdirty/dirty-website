@@ -120,16 +120,6 @@ export default function LoyaltyPage() {
         </div>
       </section>
 
-      {/* Closing quote */}
-      <section className="bg-cream section-padding-sm text-center">
-        <div className="container-default">
-          <ScrollReveal>
-            <p className="font-display-italic text-display-sm text-espresso max-w-[600px] mx-auto">
-              &ldquo;Once you go Dirty&hellip; you never go back.&rdquo;
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
     </>
   )
 }
